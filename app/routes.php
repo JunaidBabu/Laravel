@@ -15,3 +15,15 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::match(array('GET', 'POST'), '/foo/bar', function()
+{
+	$url = URL::to('foo');
+    return $url;
+});
+
+Route::match(array('GET', 'POST'), '/foo', function()
+{
+	$url = URL::to('foo');
+    return 'Hello World';
+});
